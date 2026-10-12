@@ -31,7 +31,14 @@ public class Event {
         }
 
         if(!eventDateTime.after(new Timestamp(System.currentTimeMillis()))) {
-            throw new IllegalArgumentException("Event date must be in the future.")
+            throw new IllegalArgumentException("Event date must be in the future.");
         }
     }
+
+    public String getTitle() { return title; }
+    public String getDescription() { return description; }
+    public String getLanguage() { return language; }
+    public String getDateText() { return dateText; }
+    public Timestamp getEventDateTime() { return eventDateTime; }
+    public String getLocation() { return location; }
 }

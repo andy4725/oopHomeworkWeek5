@@ -1,6 +1,9 @@
 package Exercise_2_Page_30;
 
-public class News {
+import Exercise_4_Page_49.Searchable;
+
+public class News implements Searchable {
+    //Part of ex2 and ex4 on Page 49
     private String title;
     private String description;
     private String source;
@@ -40,4 +43,11 @@ public class News {
     public String gePublisher() { return publisher; }
     public String getLanguage() { return language; }
     public String getCoverImage() { return coverImage; }
+
+    public boolean matches(String text) {
+        if(!title.contains(text)) { return false; }
+        if(!description.contains(text)) { return false; }
+
+        return true;
+    }
 }
